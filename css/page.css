@@ -1,0 +1,63 @@
+*{
+    transition: all .5s;
+}
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:200');
+
+body  {
+  background-color: rgba(75, 75, 250, 0.3);      
+    font-family: "Edu TAS Beginner", cursive;
+}
+
+
+.center {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(75, 75, 250, 0.3);
+    border-radius: 3px;
+    z-index: -1;
+}
+nav{
+    background-color: transparent;
+}
+.navbar-brand:hover{
+    color: #ff5943 !important;
+}
+.navbar-nav .nav-item .nav-link{
+    font-weight: 700;
+    color: transparent !important;
+    animation: move-to-right 2s alternate infinite ease-in-out;
+    background: linear-gradient(to right, #0c0402, rgb(255, 0, 0));
+    background-clip: text;
+    border: 1px solid #ff5943;
+    transition: all .5s;
+}
+@media (max-width: 992px) {
+    .navbar-nav .nav-item .nav-link{
+        border: none;
+    }
+}
+.navbar-nav .nav-item .nav-link:hover{
+    box-shadow: inset 0 0 20px 5px #ff5943;
+    color: transparent;
+}
+@keyframes move-to-right {
+    0%{
+        background-position-x: 70px;
+    }
+}
+.welcome{
+    box-shadow: 0 0 10px 10px #fff;
+}
+h1 .user{
+    color: transparent;
+    background: linear-gradient(to right, #ff5943, #333);
+    background-clip: text;
+    animation: move-header 2s alternate infinite ease;
+}
+@keyframes move-header {
+    0%{
+        background-position-x: 105px;
+    }
+}

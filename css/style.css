@@ -1,0 +1,257 @@
+:root {
+    --glow-color: hsl(276, 100%, 69%);
+}
+*{
+    transition: all .5s;
+}
+body {
+    font-family: "Edu TAS Beginner", cursive;
+}
+.container{
+    box-shadow: 0 0 10px 10px #7c097c81;
+}
+h1{
+    font-family: "Sevillana", cursive;
+    animation: letter 1s infinite alternate;
+}
+@media (max-width:575px) {
+    h1{
+        font-size: 20px;
+    }
+}
+@keyframes letter {
+    0%{
+        letter-spacing: 0;
+    }
+    100%{
+        letter-spacing:5px;
+    }
+}
+input{
+    background-color: transparent !important;
+}
+input:focus{
+    box-shadow: 0 0 10px 10px #7d7d7d8a !important;
+}
+input::placeholder{
+    color: #ffffff4d !important;
+}
+input:focus::placeholder{
+    transition: .5s;
+    transform: translateY(-30px);
+}
+a{
+    color: var(--glow-color);
+}
+
+/* Button Log In Style */
+.glowing-btn {
+    position: relative;
+    color: blueviolet;
+    cursor: pointer;
+    padding: 0.35em 1em;
+    border: 0.15em solid var(--glow-color);
+    border-radius: 0.45em;
+    background: none;
+    perspective: 2em;
+    font-family: "Raleway", sans-serif;
+    font-size: 1.5em;
+    font-weight: 900;
+    letter-spacing: 1em;
+    -webkit-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color), 0px 0px 0.5em 0px var(--glow-color);
+    -moz-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color), 0px 0px 0.5em 0px var(--glow-color);
+    box-shadow: inset 0px 0px 0.5em 0px var(--glow-color), 0px 0px 0.5em 0px var(--glow-color);
+    animation: border-flicker 2s linear infinite;
+}
+.glowing-txt {
+    margin-right: -0.8em;
+    -webkit-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--glow-color);
+    -moz-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--glow-color);
+    text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--glow-color);
+    animation: text-flicker 3s linear infinite;
+}
+.faulty-letter {
+    opacity: 0.5;
+    animation: faulty-flicker 2s linear infinite;
+}
+.glowing-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.7;
+    filter: blur(1em);
+    transform: translateY(120%) rotateX(95deg) scale(1, 0.35);
+    background: blueviolet;
+    pointer-events: none;
+}
+.glowing-btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    z-index: -1;
+    background-color: var(--glow-color);
+    box-shadow: 0 0 2em 0.2em var(--glow-color);
+    transition: opacity 100ms linear;
+}
+.glowing-btn:hover {
+    color: rgba(0, 0, 0, 0.8);
+    text-shadow: none;
+    animation: none;
+}
+.glowing-btn:hover .glowing-txt {
+    animation: none;
+}
+.glowing-btn:hover .faulty-letter {
+    animation: none;
+    text-shadow: none;
+    opacity: 1;
+}
+.glowing-btn:hover:before {
+    filter: blur(1.5em);
+    opacity: 1;
+}
+.glowing-btn:hover:after {
+    opacity: 1;
+}
+@keyframes faulty-flicker {
+    0% {
+        opacity: 0.1;
+    }
+    2% {
+        opacity: 0.1;
+    }
+    4% {
+        opacity: 0.5;
+    }
+    19% {
+        opacity: 0.5;
+    }
+    21% {
+        opacity: 0.1;
+    }
+    23% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 0.5;
+    }
+    83% {
+        opacity: 0.4;
+    }
+    87% {
+        opacity: 1;
+    }
+}
+@keyframes text-flicker {
+    0% {
+        opacity: 0.1;
+    }
+    2% {
+        opacity: 1;
+    }
+    8% {
+        opacity: 0.1;
+    }
+    9% {
+        opacity: 1;
+    }
+    12% {
+        opacity: 0.1;
+    }
+    20% {
+        opacity: 1;
+    }
+    25% {
+        opacity: 0.3;
+    }
+    30% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 0.7;
+    }
+    72% {
+        pacity: 0.2;
+    }
+    77% {
+        opacity: 0.9;
+    }
+    100% {
+        opacity: 0.9;
+    }
+}
+@keyframes border-flicker {
+    0% {
+        opacity: 0.1;
+    }
+    2% {
+        opacity: 1;
+    }
+    4% {
+        opacity: 0.1;
+    }
+    8% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 0.7;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .glowing-btn{
+        font-size: 1em;
+    }
+}
+@keyframes move {
+    100% {
+        transform: translate3d(0, 0, 1px) rotate(360deg);
+    }
+}
+@keyframes move {
+    100% {
+        transform: translate3d(0, 0, 1px) rotate(360deg);
+    }
+}
+
+/* BackGround Log In Style*/
+.background {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: #0a090b;
+    overflow: hidden;
+}
+
+@media (max-width:300px) {
+    .penguin {
+        width: 100px;
+        height: 100px;
+    }
+    .alert{
+        font-size: 14px;
+        margin-right: 15px;
+    }
+    .signUp h5{
+        font-size: 14px;
+    }
+    .glowing-btn {
+        padding:5px 10px;
+        font-size: 16px;
+        letter-spacing: 5px;
+    }
+    .glowing-txt {
+        margin-right: 0;
+    }
+}

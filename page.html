@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="image/home.jpeg" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner:wght@400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Sevillana&display=swap&family=Poetsen+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/page.css">
+    <title>Home</title>
+</head>
+<body class="overflow-hidden">
+
+    <div class="center d-flex justify-content-center align-items-center position-absolute m-auto"></div>
+
+    <nav class="navbar navbar-expand-lg shadow-lg">
+        <div class="container">
+            <a class="navbar-brand text-white fw-bold" href="#">SMART LOGIN</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a id="btnLogOut" class="nav-link active btn" aria-current="page" href="index.html">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="home container text-center d-flex justify-content-center align-items-center vh-100">
+        <div class="welcome rounded-2 w-100 p-5 animate__animated animate__bounceInDown">
+            <h1 class="fw-bold text-white">Welcome <span class="user" id="userName"></span></h1>
+        </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/page.js"></script>
+</body>
+</html>
